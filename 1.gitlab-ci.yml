@@ -1,0 +1,18 @@
+stages:
+  - build
+  - test
+
+job_build:
+  stage: build
+  script:
+    - echo "Building Project..."
+    - mkdir output
+    - echo "Build complete" > output/build.txt
+artifacts:
+  paths:
+   - output/
+job_test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - echo "Tests passed!" 
